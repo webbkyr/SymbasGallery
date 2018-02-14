@@ -20,11 +20,7 @@ const store = new Vuex.Store({
     photos: state => state.photos.map(photo => {
       return { src: photo.src, alt: photo.alt }
     })
-
   }
-  // mounted(state) {
-  //   seedData.map(photo => state.photos.push({ alt: photo.alt, src: photo.src }));
-  // },
 });
 
 new Vue({

@@ -1,9 +1,8 @@
 <template>
   <div class="view-all">
-    <li v-for='(photo , index) in showAll' v-bind:key=index>
+    <li v-for='(photo, index) in showAll' v-bind:key=index>
       <img :src='photo.src' :alt='photo.alt'/>
     </li>
-    <!-- <p>{{showAll}}</p> -->
   </div>
 </template>
 

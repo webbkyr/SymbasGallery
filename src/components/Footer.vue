@@ -18,8 +18,7 @@ export default {
 <style scoped>
 #pg-footer {
   font-size: 12px;
-  position: absolute;
+  position: relative;
   bottom: 0;
-  left: 395px;
 }
 </style>
