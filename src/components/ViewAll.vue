@@ -3,7 +3,9 @@
     <li v-for='(photo, index) in showAll' v-bind:key=index>
       <img class='shadowed' :src='photo.src' :alt='photo.alt'/>
     </li>
+    <div class='button-container'>
       <pg-button text='Slideshow'></pg-button>
+    </div>
   </div>
 </template>
 
@@ -21,6 +23,11 @@ export default {
   computed: {
     showAll() {
       return this.$store.getters.photos;
+    },
+  },
+  methods: {
+    sayHello() {
+      return 'Hello!';
     },
   },
 };

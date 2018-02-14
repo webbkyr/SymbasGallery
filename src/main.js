@@ -15,6 +15,7 @@ Vue.config.productionTip = false;
 const store = new Vuex.Store({
   state: {
     photos: [...symbaPhotos],
+    currentPhoto: 0,
   },
   getters: {
     photos: state => state.photos.map(photo => ({ src: photo.src, alt: photo.alt })),
@@ -24,6 +25,22 @@ const store = new Vuex.Store({
       }
       return photo;
     }),
+  },
+  mutations: {
+    nextPhoto(state) {
+      if (!state.currentPhoto === state.photos.length - 1) {
+        state.currentPhoto += 1;
+      } else {
+        state.currentPhoto = 0;
+      }
+    },
+    prevPhoto(state) {
+      if (!state.currentPhoto === state.photos[0]) {
+        state.currentPhoto -= 1;
+      } else {
+        state.currentPhoto = state.photos.length - 1;
+      }
+    },
   },
 });
 
