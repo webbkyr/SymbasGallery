@@ -1,19 +1,23 @@
 <template>
   <div class="view-all">
     <li v-for='(photo, index) in showAll' v-bind:key=index>
-      <img :src='photo.src' :alt='photo.alt'/>
+      <img class='shadowed' :src='photo.src' :alt='photo.alt'/>
     </li>
+      <pg-button text='Slideshow'></pg-button>
   </div>
 </template>
 
 <script>
+import Button from '@/components/Button';
 
 export default {
   name: 'ViewAll',
-  data: () => ({
-    msg: 'hello',
-    photos: [],
-  }),
+  // data: () => ({
+  //   photos: [],
+  // }),
+  components: {
+    'pg-button': Button,
+  },
   computed: {
     showAll() {
       return this.$store.getters.photos;
@@ -30,8 +34,14 @@ h1, h2 {
 
 img {
   width: 300px;
+  max-height: 400px;
   border-radius: 20px;
 }
+/* .shadowed {
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+} */
 ul {
   list-style-type: none;
   padding: 0;
