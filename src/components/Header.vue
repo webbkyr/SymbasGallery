@@ -1,7 +1,8 @@
 <template>
   <div class='main-header'>
     <h1>{{ text }}</h1>
-    <p> <router-link to='about'> {{ viewAbout }}</router-link></p>
+    <p class='nav'> <router-link to='/'>{{ viewHome }}</router-link></p> |
+    <p class='nav' > <router-link to='about'> {{ viewAbout }}</router-link></p>
   </div>
 </template>
 
@@ -10,9 +11,9 @@ export default {
   name: 'Pg-Header',
   data() {
     return {
-      text: 'Symba\'s Gallery',
-      viewAbout: 'About page',
-      links: { aboutLink: '/about' },
+      text: 'Symba\'s Photogallery',
+      viewAbout: 'About',
+      viewHome: 'Home',
     };
   },
 };
@@ -32,6 +33,17 @@ li {
   margin: 0 10px;
 }
 a {
-  color: #42b983;
+  color:#40A798;
+
 }
+.main-header {
+  margin-bottom: 15px;
+}
+.nav {
+  display: inline;
+  padding: 10px;
+  font-size: 16px;
+
+}
+
 </style>

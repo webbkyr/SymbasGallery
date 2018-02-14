@@ -22,7 +22,7 @@ export default {
   -webkit-transition-duration: 0.5s;
 }
 .pg__button:hover {
-  background-color: #42b983;
-  color: white;
+  background-color: #40A798;
+  color: #F1F1F1;
 }
 </style>

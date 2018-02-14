@@ -5,7 +5,6 @@ import Vuex from 'vuex';
 import App from './App';
 import router from './router';
 import symbaPhotos from './assets/symba.json';
-// import seedData from './assets/seed.json';
 
 Vue.use(Vuex);
 Vue.config.productionTip = false;
@@ -19,9 +18,7 @@ const store = new Vuex.Store({
   },
   getters: {
     photos: state => state.photos.map(photo => ({ src: photo.src, alt: photo.alt })),
-    selectedPhoto: state => state.photos.find((photo, index) => {
-        return index === state.currentPhoto
-    }),
+    selectedPhoto: state => state.photos.find((photo, index) => index === state.currentPhoto),
   },
   mutations: {
     nextPhoto(state) {

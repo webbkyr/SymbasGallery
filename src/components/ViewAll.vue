@@ -14,9 +14,6 @@ import Button from '@/components/Button';
 
 export default {
   name: 'ViewAll',
-  // data: () => ({
-  //   photos: [],
-  // }),
   components: {
     'pg-button': Button,
   },
@@ -40,8 +37,13 @@ h1, h2 {
 }
 
 img {
+  position: relative;
+  float: left;
   width: 300px;
-  max-height: 400px;
+  height: 300px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
   border-radius: 20px;
 }
 .shadowed {
@@ -59,10 +61,5 @@ li {
 }
 a {
   color: #42b983;
-}
-footer {
-  position: relative;
-  bottom: -400px;
-  font-size: 12px;
 }
 </style>

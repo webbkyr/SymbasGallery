@@ -1,6 +1,6 @@
 <template>
   <footer id='pg-footer'>
-    <p> {{ text }}</p>
+    <p id='footer-text'> {{ text }}</p>
   </footer>
 </template>
 
@@ -17,11 +17,14 @@ export default {
 
 <style scoped>
 #pg-footer {
-  font-size: 12px;
   position: fixed;
   width: 100%;
   bottom: 0;
   left: 0;
-  background: #999;
+  background-color: #476268
+}
+#footer-text {
+  font-size: 14px;
+  color: #F1F1F1;
 }
 </style>

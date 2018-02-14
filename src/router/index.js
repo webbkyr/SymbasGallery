@@ -21,7 +21,7 @@ export default new Router({
     {
       path: '/slideshow',
       name: 'Slideshow',
-      component: Slideshow
-    }
+      component: Slideshow,
+    },
   ],
 });
