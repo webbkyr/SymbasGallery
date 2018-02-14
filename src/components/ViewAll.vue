@@ -1,16 +1,25 @@
 <template>
   <div class="view-all">
-    {{ placeholder }}
+    <li v-for='(photo , index) in showAll' v-bind:key=index>
+      <img :src='photo.src' :alt='photo.alt'/>
+    </li>
+    <!-- <p>{{showAll}}</p> -->
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'ViewAll',
-  data() {
-    return {
-      placeholder: 'pictures',
-    };
+  data: () => ({
+    msg: 'hello',
+    photos: [],
+  }),
+  computed: {
+    showAll() {
+      console.log(this.$store.getters.photos);
+      return this.$store.getters.photos;
+    },
   },
 };
 </script>
@@ -19,6 +28,10 @@ export default {
 <style scoped>
 h1, h2 {
   font-weight: normal;
+}
+
+img {
+  width: 300px;
 }
 ul {
   list-style-type: none;
