@@ -4,7 +4,7 @@
       <img class='shadowed' :src='photo.src' :alt='photo.alt'/>
     </li>
     <div class='button-container'>
-      <pg-button text='Slideshow'></pg-button>
+      <pg-button :clicked='beginSlideshow' text='Slideshow'></pg-button>
     </div>
   </div>
 </template>
@@ -25,11 +25,11 @@ export default {
       return this.$store.getters.photos;
     },
   },
-  // methods: {
-  //   sayHello() {
-  //     return 'Hello?';
-  //   },
-  // },
+  methods: {
+    beginSlideshow() {
+      this.$router.push('slideshow');
+    },
+  },
 };
 </script>
 

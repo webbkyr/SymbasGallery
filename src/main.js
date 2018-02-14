@@ -19,11 +19,8 @@ const store = new Vuex.Store({
   },
   getters: {
     photos: state => state.photos.map(photo => ({ src: photo.src, alt: photo.alt })),
-    selectedPhoto: state => state.photos.filter((photo, value) => {
-      if (photo[value] === photo) {
-        return photo;
-      }
-      return photo;
+    selectedPhoto: state => state.photos.find((photo, index) => {
+        return index === state.currentPhoto
     }),
   },
   mutations: {
@@ -35,7 +32,8 @@ const store = new Vuex.Store({
       }
     },
     prevPhoto(state) {
-      if (!state.currentPhoto === state.photos[0]) {
+      // const firstPhoto = state.photos[0];
+      if (!state.currentPhoto === 0) {
         state.currentPhoto -= 1;
       } else {
         state.currentPhoto = state.photos.length - 1;

@@ -5,12 +5,12 @@
 <script>
 export default {
   name: 'Pg-button',
-  props: ['text'],
-  methods: {
-    clicked() {
-      console.log('I was clicked!');
-    },
-  },
+  props: ['text', 'clicked'],
+  // methods: {
+  //   clicked() {
+  //     console.log('I was clicked!');
+  //   },
+  // },
 
 };
 </script>
