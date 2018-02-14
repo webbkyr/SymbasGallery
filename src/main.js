@@ -4,8 +4,8 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import App from './App';
 import router from './router';
-// import symbaPhotos from './assets/symba.json';
-import seedData from './assets/seed.json';
+import symbaPhotos from './assets/symba.json';
+// import seedData from './assets/seed.json';
 
 Vue.use(Vuex);
 Vue.config.productionTip = false;
@@ -14,10 +14,16 @@ Vue.config.productionTip = false;
 
 const store = new Vuex.Store({
   state: {
-    photos: [...seedData],
+    photos: [...symbaPhotos],
   },
   getters: {
     photos: state => state.photos.map(photo => ({ src: photo.src, alt: photo.alt })),
+    selectedPhoto: state => state.photos.filter((photo, value) => {
+      if (photo[value] === photo) {
+        return photo;
+      }
+      return photo;
+    }),
   },
 });
 

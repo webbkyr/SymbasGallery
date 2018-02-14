@@ -30,6 +30,7 @@ h1, h2 {
 
 img {
   width: 300px;
+  border-radius: 20px;
 }
 ul {
   list-style-type: none;
