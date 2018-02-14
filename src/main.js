@@ -25,15 +25,14 @@ const store = new Vuex.Store({
   },
   mutations: {
     nextPhoto(state) {
-      if (!state.currentPhoto === state.photos.length - 1) {
+      if (state.currentPhoto !== state.photos.length - 1) {
         state.currentPhoto += 1;
       } else {
         state.currentPhoto = 0;
       }
     },
     prevPhoto(state) {
-      // const firstPhoto = state.photos[0];
-      if (!state.currentPhoto === 0) {
+      if (state.currentPhoto !== 0) {
         state.currentPhoto -= 1;
       } else {
         state.currentPhoto = state.photos.length - 1;

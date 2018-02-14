@@ -1,23 +1,28 @@
 [
   {
       "alt": "Symba at 12 weeks old",
-      "src": "https://goo.gl/dsmLd4"
+      "src": "https://goo.gl/dsmLd4",
+      "category": "puppy"
   },
   {
       "alt": "Symba at 12 weeks looking into camera",
-      "src": "https://goo.gl/BVtVSo"
+      "src": "https://goo.gl/BVtVSo",
+      "category": "puppy"
   },
   {
     "alt": "Symba sitting on my lap",
-    "src": "https://goo.gl/Y7smFm"
+    "src": "https://goo.gl/Y7smFm",
+    "category": "puppy"
   },
   {
       "alt": "Symba at 1 year old, lying on bed and looking into camera",
-      "src": "https://goo.gl/UqGvQh"
+      "src": "https://goo.gl/UqGvQh",
+      "category": "adult"
   },
   {
       "alt": "Symba at 2 years old, lying on white blanket",
-      "src": "https://goo.gl/k3iPyu"
+      "src": "https://goo.gl/k3iPyu",
+      "category": "adult"
   }
 
 ]
