@@ -22,6 +22,13 @@ export default {
   margin-top: 15px;
   border: 1px solid black;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+}
+.pg__button:hover {
+  background-color: #42b983;
+  color: white;
 }
 </style>
