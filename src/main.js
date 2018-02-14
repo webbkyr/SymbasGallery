@@ -17,10 +17,8 @@ const store = new Vuex.Store({
     photos: [...seedData],
   },
   getters: {
-    photos: state => state.photos.map(photo => {
-      return { src: photo.src, alt: photo.alt }
-    })
-  }
+    photos: state => state.photos.map(photo => ({ src: photo.src, alt: photo.alt })),
+  },
 });
 
 new Vue({

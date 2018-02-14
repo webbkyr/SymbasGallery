@@ -16,7 +16,6 @@ export default {
   }),
   computed: {
     showAll() {
-      console.log(this.$store.getters.photos);
       return this.$store.getters.photos;
     },
   },
