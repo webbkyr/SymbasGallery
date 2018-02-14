@@ -43,6 +43,7 @@ export default {
 <style>
 img {
   width: 300px;
-  max-height: 450px;
+  max-height: 400px;
+  border-radius: 20px;
 }
 </style>

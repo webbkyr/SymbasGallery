@@ -44,11 +44,11 @@ img {
   max-height: 400px;
   border-radius: 20px;
 }
-/* .shadowed {
+.shadowed {
     -webkit-box-shadow: 0 10px 6px -6px #777;
        -moz-box-shadow: 0 10px 6px -6px #777;
             box-shadow: 0 10px 6px -6px #777;
-} */
+}
 ul {
   list-style-type: none;
   padding: 0;

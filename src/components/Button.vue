@@ -6,12 +6,6 @@
 export default {
   name: 'Pg-button',
   props: ['text', 'clicked'],
-  // methods: {
-  //   clicked() {
-  //     console.log('I was clicked!');
-  //   },
-  // },
-
 };
 </script>
 

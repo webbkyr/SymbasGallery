@@ -2,6 +2,7 @@
   <div id="app">
     <pg-header></pg-header>
     <router-view/>
+    <div class='clear'></div>
     <pg-footer></pg-footer>
   </div>
 </template>
@@ -26,6 +27,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 50px;
+}
+.clear {
+  clear: both;
+  height: 60px;
 }
 </style>
