@@ -1,5 +1,6 @@
 <template>
   <div class="view-all">
+    <pg-filters></pg-filters>
     <li v-for='(photo, index) in showAll' v-bind:key=index>
       <img class='shadowed' :src='photo.src' :alt='photo.alt'/>
     </li>
@@ -11,11 +12,13 @@
 
 <script>
 import Button from '@/components/Button';
+import FilterOptions from '@/components/FilterOptions';
 
 export default {
   name: 'ViewAll',
   components: {
     'pg-button': Button,
+    'pg-filters': FilterOptions,
   },
   computed: {
     showAll() {
