@@ -25,11 +25,11 @@ export default {
       return this.$store.getters.photos;
     },
   },
-  methods: {
-    sayHello() {
-      return 'Hello!';
-    },
-  },
+  // methods: {
+  //   sayHello() {
+  //     return 'Hello?';
+  //   },
+  // },
 };
 </script>
 

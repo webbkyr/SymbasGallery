@@ -1,11 +1,16 @@
 <template>
-  <button class='pg__button'>{{ text }}</button>
+  <button @click='clicked' class='pg__button'>{{ text }}</button>
 </template>
 
 <script>
 export default {
   name: 'Pg-button',
   props: ['text'],
+  methods: {
+    clicked() {
+      console.log('I was clicked!');
+    },
+  },
 
 };
 </script>
