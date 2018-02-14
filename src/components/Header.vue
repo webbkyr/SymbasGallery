@@ -1,5 +1,8 @@
 <template>
+  <div class='main-header'>
     <h1>{{ text }}</h1>
+    <p> <router-link to='about'> {{ viewAbout }}</router-link></p>
+  </div>
 </template>
 
 <script>
@@ -8,6 +11,8 @@ export default {
   data() {
     return {
       text: 'Symba\'s Gallery',
+      viewAbout: 'About page',
+      links: { aboutLink: '/about' },
     };
   },
 };
