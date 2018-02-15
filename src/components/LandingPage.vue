@@ -1,6 +1,6 @@
 <template>
   <div id='home-view'>
-    <h2>Welcome to Symba's World</h2>
+    <!-- <h2>Welcome to </h2> -->
     <img class='home-photo' :src='homePhoto.src' :alt='homePhoto.alt' />
     <pg-button :clicked='enterSite' text='Enter'></pg-button>
   </div>
@@ -33,7 +33,7 @@ export default {
   text-align: center;
   height: 450px;
   border-radius: 20px;
-  border: 2px solid #42b983;
+  border: 5px solid #42b983;
 
 }
 </style>

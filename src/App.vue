@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <pg-header></pg-header>
-    <router-view/>
+    <transition name='slide-fade'>
+      <router-view/>
+    </transition>
     <div class='clear'></div>
     <pg-footer></pg-footer>
   </div>
@@ -31,9 +33,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   margin-top: 50px;
+
 }
 .clear {
   clear: both;
   height: 60px;
+}
+.slide-fade-enter-active {
+  transition: all .5s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s ease-out;
+}
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
 }
 </style>

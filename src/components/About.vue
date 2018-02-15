@@ -1,12 +1,10 @@
 <template>
   <div class='about'>
-    <h1>About</h1>
-    <h2>...Symba</h2>
+    <h1>What's this app?</h1>
+    <h2>About Symba</h2>
     <p>{{ text }}</p>
-    <h2>...this Gallery</h2>
-    <p>Github repo: xxxxx</p>
-    <p>{{ text }}</p>
-    <h2>...me</h2>
+    <h2>The Code</h2>
+    <p>Github repo: <a :href='links[0].url' target=_blank> Link</a></p>
     <p>{{ text }}</p>
     <h2>Contact</h2>
     <p>Github: webbkyr</p>
@@ -18,7 +16,10 @@
 export default {
   name: 'About',
   data: () => ({
-    text: 'Born August 25, 2015 - Duis sem ipsum, luctus sit amet congue et, pretium quis lectus. Nulla facilisi. Aliquam in imperdiet tellus, in faucibus felis. Donec mauris ex, mattis ac pulvinar vitae, suscipit consectetur orci. Nunc arcu magna, dapibus a dolor at, gravida rutrum leo. Vivamus ultrices non ipsum et ultricies. Vestibulum molestie velit eu rutrum eleifend. Quisque et lacus ac nibh efficitur viverra. Maecenas varius vestibulum ligula eget molestie.',
+    text: 'Born August 25, 2015',
+    links: [
+      {name: 'Github', url: 'https://github.com/webbkyr/SymbasGallery'}
+    ]
   }),
 };
 </script>
