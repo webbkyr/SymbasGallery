@@ -2,9 +2,9 @@
   <div class='pg__filters'>
     <p>Filter photos based on the following:</p>
     <input id='puppy_checkbox' value='puppy' type='checkbox'  @click='togglePuppy'>
-    <label for='puppyPhotos'>Puppy Photos Only</label>
+    <label for='puppyPhotos'>Puppy Photos</label>
     <input id='adult_checkbox' value='adult' type='checkbox'  @click='toggleAdult'>
-    <label for='adultPhotos'>Adult Photos Only</label>
+    <label for='adultPhotos'>Adult Photos</label>
     <input id='show_all_checkbox' value='all' type='checkbox'
     @click='toggleShowAll' checked>
     <label for='showAllPhotos'>Show all Photos</label>

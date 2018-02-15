@@ -1,18 +1,22 @@
 <template>
   <div class="view-all">
     <pg-filters></pg-filters>
+  <ul>
     <li v-show='$store.state.puppyChecked && $store.state.showAllPhotos === false' 
-        v-for='(photo, index) in puppyPhotos' v-bind:key=index>
+        v-for='(photo, index) in puppyPhotos'>
       <img class='shadowed' :src='photo.src' :alt='photo.alt'/>
     </li>
     <li v-show='$store.state.adultChecked && $store.state.showAllPhotos == false' 
-        v-for='(photo, index) in adultPhotos' v-bind:key=index>
+        v-for='(photo, index) in adultPhotos'>
       <img class='shadowed' :src='photo.src' :alt='photo.alt'/>
     </li>
-    <li v-show='$store.state.showAllPhotos' 
-        v-for='(photo, index) in showAll' v-bind:key=index>
-      <img class='shadowed' :src='photo.src' :alt='photo.alt'/>
-    </li>
+    <transition-group name='allPhotos' tag='li'>
+      <li v-show='$store.state.showAllPhotos'
+            v-for='(photo, index) in showAll' :key=index>
+        <img class='shadowed' :src='photo.src' :alt='photo.alt'/>
+      </li>
+    </transition-group>
+  </ul>
     <div class='button-container'>
       <pg-button :clicked='beginSlideshow' text='Slideshow'></pg-button>
     </div>
@@ -25,6 +29,9 @@ import FilterOptions from '@/components/FilterOptions';
 
 export default {
   name: 'ViewAll',
+  data: () => ({
+    show: true,
+  }),
   components: {
     'pg-button': Button,
     'pg-filters': FilterOptions,
@@ -44,16 +51,37 @@ export default {
     beginSlideshow() {
       this.$router.push('slideshow');
     },
+    hideEl() {
+      if (!this.$store.state.showAllPhotos) {
+        this.isHidden = !this.isHidden;
+      }
+    }
   },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.view-all {
-  transition-property: all;
-  transition-duration: 3s;
-  transition-timing-function: ease-in-out;
+/* li {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  animation: fade 1s;
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+} */
+
+.allPhotos-enter-active, .allPhotos-leave-active {
+  transition: all 1s;
+}
+.allPhotos-enter, .allPhotos-leave-to {
+  opacity: 0;
 }
 h1, h2 {
   font-weight: normal;
