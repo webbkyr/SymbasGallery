@@ -51,8 +51,12 @@ const store = new Vuex.Store({
         state.puppyChecked = false;
       };
     },
-    toggleAdult(state) {
-      state.adultPhotosOnly = !state.showAllPhotos;
+    toggleAdult(state, boolean) {
+      if (boolean === true) {
+        state.adultChecked = true
+      } else {
+        state.adultChecked = false;
+      }
     },
   },
 });

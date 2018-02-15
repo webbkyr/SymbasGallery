@@ -1,15 +1,15 @@
 <template>
   <div class="view-all">
     <pg-filters></pg-filters>
-    <li v-if='$store.state.puppyChecked && $store.state.showAllPhotos === false' 
+    <li v-show='$store.state.puppyChecked && $store.state.showAllPhotos === false' 
         v-for='(photo, index) in puppyPhotos' v-bind:key=index>
       <img class='shadowed' :src='photo.src' :alt='photo.alt'/>
     </li>
-    <li v-else-if='$store.state.adultChecked && $store.state.showAllPhotos == false' 
+    <li v-show='$store.state.adultChecked && $store.state.showAllPhotos == false' 
         v-for='(photo, index) in adultPhotos' v-bind:key=index>
       <img class='shadowed' :src='photo.src' :alt='photo.alt'/>
     </li>
-    <li v-if='$store.state.showAllPhotos' 
+    <li v-show='$store.state.showAllPhotos' 
         v-for='(photo, index) in showAll' v-bind:key=index>
       <img class='shadowed' :src='photo.src' :alt='photo.alt'/>
     </li>
@@ -50,6 +50,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.view-all {
+  transition-property: all;
+  transition-duration: 3s;
+  transition-timing-function: ease-in-out;
+}
 h1, h2 {
   font-weight: normal;
 }
@@ -63,6 +68,7 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 20px;
+  margin: 10px;
 }
 .shadowed {
     -webkit-box-shadow: 0 10px 6px -6px #777;

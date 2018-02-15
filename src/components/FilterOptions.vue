@@ -17,19 +17,20 @@ export default {
   methods: {
     togglePuppy(event) {
       if (event.currentTarget.checked) {
-        this.$store.commit('togglePuppy', true)
+        this.$store.commit('togglePuppy', true);
       } else {
-        this.$store.commit('togglePuppy', false)
+        this.$store.commit('togglePuppy', false);
       }
-      // this.$store.commit('togglePuppy');
     },
     toggleAdult(event) {
-      console.log(event.currentTarget.value);
-      // this.$store.commit('toggleAdult');
+      if (event.currentTarget.checked) {
+        this.$store.commit('toggleAdult', true);
+      } else {
+        this.$store.commit('toggleAdult', false);
+      }
     },
-    toggleShowAll(event) {
-      console.log(event)
-        this.$store.commit('toggleShowAll')
+    toggleShowAll() {
+        this.$store.commit('toggleShowAll');
     }
   },
 };
