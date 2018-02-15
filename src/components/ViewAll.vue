@@ -1,6 +1,14 @@
 <template>
   <div class="view-all">
     <pg-filters></pg-filters>
+    <li v-if='$store.state.puppyChecked && $store.state.showAllPhotos === false' 
+        v-for='(photo, index) in puppyPhotos' v-bind:key=index>
+      <img class='shadowed' :src='photo.src' :alt='photo.alt'/>
+    </li>
+    <li v-else-if='$store.state.adultChecked && $store.state.showAllPhotos == false' 
+        v-for='(photo, index) in adultPhotos' v-bind:key=index>
+      <img class='shadowed' :src='photo.src' :alt='photo.alt'/>
+    </li>
     <li v-if='$store.state.showAllPhotos' 
         v-for='(photo, index) in showAll' v-bind:key=index>
       <img class='shadowed' :src='photo.src' :alt='photo.alt'/>
@@ -36,12 +44,6 @@ export default {
     beginSlideshow() {
       this.$router.push('slideshow');
     },
-    // showPuppy() {
-    //   return this.$store.getters.puppyPhotos;
-    // },
-    // showAdult() {
-    //   return this.$store.getters.adultPhotos;
-    // }
   },
 };
 </script>

@@ -16,8 +16,8 @@ const store = new Vuex.Store({
     photos: [...symbaPhotos],
     currentPhoto: 0,
     showAllPhotos: true,
-    puppyChecked: true,
-    adultChecked: true
+    puppyChecked: false,
+    adultChecked: false
   },
   getters: {
     photos: state => state.photos.map(photo => ({ src: photo.src, alt: photo.alt })),
