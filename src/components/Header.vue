@@ -23,6 +23,8 @@ export default {
 <style scoped>
 h1, h2 {
   font-weight: bold;
+  margin: 0 auto;
+
 }
 h1 {
   font-size: 42px;

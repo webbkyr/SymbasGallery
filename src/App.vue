@@ -40,10 +40,10 @@ body {
   height: 60px;
 }
 .slide-fade-enter-active {
-  transition: all .5s ease;
+  transition: all .8s ease;
 }
 .slide-fade-leave-active {
-  transition: all .8s ease-out;
+  transition: all .0s ease-out;
 }
 .slide-fade-enter, .slide-fade-leave-to {
   transform: translateX(10px);

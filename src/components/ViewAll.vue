@@ -2,7 +2,7 @@
   <div class="view-all">
     <pg-filters></pg-filters>
   <ul>
-    <transition-group name='onlyPuppyPhotos' tag='li'>
+    <!-- <transition-group name='onlyPuppyPhotos' tag='li'>
       <li v-show='$store.state.puppyChecked && $store.state.showAllPhotos === false'
           v-for='(photo, index) in puppyPhotos' :key=index>
         <img class='shadowed' :src='photo.src' :alt='photo.alt'/>
@@ -13,10 +13,9 @@
             v-for='(photo, index) in adultPhotos' :key=index>
           <img class='shadowed' :src='photo.src' :alt='photo.alt'/>
         </li>
-    </transition-group>
-    <transition-group name='allPhotos' tag='li'>
-        <li v-show='$store.state.showAllPhotos'
-              v-for='(photo, index) in showAll' :key=index>
+    </transition-group> -->
+    <transition-group name='activePhotos' tag='li'>
+        <li v-for='(photo, index) in activePhotos' :key=index>
           <img class='shadowed' :src='photo.src' :alt='photo.alt'/>
         </li>
     </transition-group>
@@ -38,15 +37,19 @@ export default {
     'pg-filters': FilterOptions,
   },
   computed: {
-    showAll() {
-      return this.$store.getters.photos;
-    },
-    puppyPhotos() {
-      return this.$store.getters.puppyPhotos;
-    },
-    adultPhotos() {
-      return this.$store.getters.adultPhotos;
-    },
+    // showAll() {
+    //   return this.$store.getters.photos;
+    // },
+    // puppyPhotos() {
+    //   return this.$store.getters.puppyPhotos;
+    // },
+    // adultPhotos() {
+    //   return this.$store.getters.adultPhotos;
+    // },
+    activePhotos() {
+      //all the photos but with filter applied to it
+      return this.$store.getters.activePhotos;
+    }
   },
   methods: {
     beginSlideshow() {
