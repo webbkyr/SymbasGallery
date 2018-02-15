@@ -17,7 +17,7 @@ const store = new Vuex.Store({
     currentPhoto: 0,
     showAllPhotos: true,
     puppyChecked: false,
-    adultChecked: false
+    adultChecked: false,
   },
   getters: {
     photos: state => state.photos.map(photo => ({ src: photo.src, alt: photo.alt })),
@@ -46,14 +46,13 @@ const store = new Vuex.Store({
     togglePuppy(state, boolean) {
       if (boolean === true) {
         state.puppyChecked = true;
-      } 
-      else {
+      } else {
         state.puppyChecked = false;
-      };
+      }
     },
     toggleAdult(state, boolean) {
       if (boolean === true) {
-        state.adultChecked = true
+        state.adultChecked = true;
       } else {
         state.adultChecked = false;
       }

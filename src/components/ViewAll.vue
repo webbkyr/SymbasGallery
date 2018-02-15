@@ -2,23 +2,23 @@
   <div class="view-all">
     <pg-filters></pg-filters>
   <ul>
-  <transition-group name='onlyPuppyPhotos' tag='li'>
-    <li v-show='$store.state.puppyChecked && $store.state.showAllPhotos === false' 
-        v-for='(photo, index) in puppyPhotos' :key=index>
-      <img class='shadowed' :src='photo.src' :alt='photo.alt'/>
-    </li>
-  </transition-group>
-    <transition-group name='onlyAdultPhotos' tag='li'>
-      <li v-show='$store.state.adultChecked && $store.state.showAllPhotos == false' 
-          v-for='(photo, index) in adultPhotos' :key=index>
+    <transition-group name='onlyPuppyPhotos' tag='li'>
+      <li v-show='$store.state.puppyChecked && $store.state.showAllPhotos === false'
+          v-for='(photo, index) in puppyPhotos' :key=index>
         <img class='shadowed' :src='photo.src' :alt='photo.alt'/>
       </li>
     </transition-group>
+    <transition-group name='onlyAdultPhotos' tag='li'>
+        <li v-show='$store.state.adultChecked && $store.state.showAllPhotos == false'
+            v-for='(photo, index) in adultPhotos' :key=index>
+          <img class='shadowed' :src='photo.src' :alt='photo.alt'/>
+        </li>
+    </transition-group>
     <transition-group name='allPhotos' tag='li'>
-      <li v-show='$store.state.showAllPhotos'
-            v-for='(photo, index) in showAll' :key=index>
-        <img class='shadowed' :src='photo.src' :alt='photo.alt'/>
-      </li>
+        <li v-show='$store.state.showAllPhotos'
+              v-for='(photo, index) in showAll' :key=index>
+          <img class='shadowed' :src='photo.src' :alt='photo.alt'/>
+        </li>
     </transition-group>
   </ul>
     <div class='button-container'>
@@ -33,9 +33,6 @@ import FilterOptions from '@/components/FilterOptions';
 
 export default {
   name: 'ViewAll',
-  data: () => ({
-    show: true,
-  }),
   components: {
     'pg-button': Button,
     'pg-filters': FilterOptions,
@@ -43,7 +40,7 @@ export default {
   computed: {
     showAll() {
       return this.$store.getters.photos;
-      },
+    },
     puppyPhotos() {
       return this.$store.getters.puppyPhotos;
     },
@@ -55,33 +52,27 @@ export default {
     beginSlideshow() {
       this.$router.push('slideshow');
     },
-    hideEl() {
-      if (!this.$store.state.showAllPhotos) {
-        this.isHidden = !this.isHidden;
-      }
-    }
   },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.allPhotos-enter-active, .allPhotos-leave-active {
+.allPhotos-enter-active,
+.allPhotos-leave-active,
+.onlyAdultPhotos-enter-active,
+.onlyAdultPhotos-leave-active,
+.onlyPuppyPhotos-enter-active,
+.onlyPuppyPhotos-leave-active
+ {
   transition: all 1s;
 }
-.allPhotos-enter, .allPhotos-leave-to {
-  opacity: 0;
-}
-.onlyAdultPhotos-enter-active, .onlyAdultPhotos-leave-active {
-  transition: all 1s;
-}
-.onlyAdultPhotos-enter, .onlyAdultPhotos-leave-to {
-  opacity: 0;
-}
-.onlyPuppyPhotos-enter-active, .onlyPuppyPhotos-leave-active {
-  transition: all 1s;
-}
-.onlyPuppyPhotos-enter, .onlyPuppyPhotos-leave-to {
+.allPhotos-enter,
+.allPhotos-leave-to,
+.onlyAdultPhotos-enter,
+.onlyAdultPhotos-leave-to,
+.onlyPuppyPhotos-enter,
+.onlyPuppyPhotos-leave-to {
   opacity: 0;
 }
 h1, h2 {

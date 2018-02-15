@@ -30,8 +30,8 @@ export default {
       }
     },
     toggleShowAll() {
-        this.$store.commit('toggleShowAll');
-    }
+      this.$store.commit('toggleShowAll');
+    },
   },
 };
 </script>
