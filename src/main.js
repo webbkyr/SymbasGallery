@@ -15,10 +15,15 @@ const store = new Vuex.Store({
   state: {
     photos: [...symbaPhotos],
     currentPhoto: 0,
+    showAllPhotos: true,
+    puppyChecked: true,
+    adultChecked: true
   },
   getters: {
     photos: state => state.photos.map(photo => ({ src: photo.src, alt: photo.alt })),
     selectedPhoto: state => state.photos.find((photo, index) => index === state.currentPhoto),
+    puppyPhotos: state => state.photos.filter(photo => photo.category === 'puppy'),
+    adultPhotos: state => state.photos.filter(photo => photo.category === 'adult'),
   },
   mutations: {
     nextPhoto(state) {
@@ -34,6 +39,20 @@ const store = new Vuex.Store({
       } else {
         state.currentPhoto = state.photos.length - 1;
       }
+    },
+    toggleShowAll(state) {
+      state.showAllPhotos = !state.showAllPhotos;
+    },
+    togglePuppy(state, boolean) {
+      if (boolean === true) {
+        state.puppyChecked = true;
+      } 
+      else {
+        state.puppyChecked = false;
+      };
+    },
+    toggleAdult(state) {
+      state.adultPhotosOnly = !state.showAllPhotos;
     },
   },
 });

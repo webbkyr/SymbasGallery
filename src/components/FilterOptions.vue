@@ -1,16 +1,37 @@
 <template>
   <div class='pg__filters'>
     <p>Filter photos based on the following:</p>
-    <input id='puppy_checkbox' type='checkbox'>
-    <label for='puppyPhotos'>Puppy</label>
-    <input id='adult_checkbox' type='checkbox'>
-    <label for='adultPhotos'>Adult</label>
+    <input id='puppy_checkbox' value='puppy' type='checkbox'  @click='togglePuppy'>
+    <label for='puppyPhotos'>Puppy Photos Only</label>
+    <input id='adult_checkbox' value='adult' type='checkbox'  @click='toggleAdult'>
+    <label for='adultPhotos'>Adult Photos Only</label>
+    <input id='show_all_checkbox' value='all' type='checkbox'
+    @click='toggleShowAll' checked>
+    <label for='showAllPhotos'>Show all Photos</label>
   </div>
 </template>
 
 <script>
 export default {
   name: 'FilterOptions',
+  methods: {
+    togglePuppy(event) {
+      if (event.currentTarget.checked) {
+        this.$store.commit('togglePuppy', true)
+      } else {
+        this.$store.commit('togglePuppy', false)
+      }
+      // this.$store.commit('togglePuppy');
+    },
+    toggleAdult(event) {
+      console.log(event.currentTarget.value);
+      // this.$store.commit('toggleAdult');
+    },
+    toggleShowAll(event) {
+      console.log(event)
+        this.$store.commit('toggleShowAll')
+    }
+  },
 };
 </script>
 

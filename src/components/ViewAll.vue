@@ -1,7 +1,8 @@
 <template>
   <div class="view-all">
     <pg-filters></pg-filters>
-    <li v-for='(photo, index) in showAll' v-bind:key=index>
+    <li v-if='$store.state.showAllPhotos' 
+        v-for='(photo, index) in showAll' v-bind:key=index>
       <img class='shadowed' :src='photo.src' :alt='photo.alt'/>
     </li>
     <div class='button-container'>
@@ -23,12 +24,24 @@ export default {
   computed: {
     showAll() {
       return this.$store.getters.photos;
+      },
+    puppyPhotos() {
+      return this.$store.getters.puppyPhotos;
+    },
+    adultPhotos() {
+      return this.$store.getters.adultPhotos;
     },
   },
   methods: {
     beginSlideshow() {
       this.$router.push('slideshow');
     },
+    // showPuppy() {
+    //   return this.$store.getters.puppyPhotos;
+    // },
+    // showAdult() {
+    //   return this.$store.getters.adultPhotos;
+    // }
   },
 };
 </script>

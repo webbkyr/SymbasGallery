@@ -26,7 +26,7 @@ export default {
 <style scoped>
 .about {
   margin: 0 auto;
-  padding: 15px;
+  padding: 5px;
 }
 h2 {
   font-weight: normal;
