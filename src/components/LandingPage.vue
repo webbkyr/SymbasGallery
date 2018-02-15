@@ -2,7 +2,7 @@
   <div id='home-view'>
     <h2>Welcome to Symba's World</h2>
     <img class='home-photo' :src='homePhoto.src' :alt='homePhoto.alt' />
-    <pg-button :clicked='clicked' text='Enter'></pg-button>
+    <pg-button :clicked='enterSite' text='Enter'></pg-button>
   </div>
 </template>
 
@@ -17,6 +17,11 @@ export default {
   computed: {
     homePhoto() {
       return this.$store.state.homePagePhoto;
+    },
+  },
+  methods: {
+    enterSite() {
+      this.$router.push('/photos');
     },
   },
 };
