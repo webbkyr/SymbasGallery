@@ -1,7 +1,6 @@
 <template>
   <div class='slideshow'>
     <img class='shadowed' :src='currentPhoto.src' :alt='currentPhoto.alt' />
-    <p>{{ currentPhotoId }}</p>
     <pg-button :clicked='prevPhoto' text='Prev Photo'></pg-button>
     <pg-button :clicked='nextPhoto' text='Next Photo'></pg-button>
   </div>
