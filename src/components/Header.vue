@@ -24,6 +24,9 @@ export default {
 h1, h2 {
   font-weight: normal;
 }
+h1 {
+  font-size: 42px;
+}
 ul {
   list-style-type: none;
   padding: 0;
@@ -37,7 +40,7 @@ a {
 
 }
 .main-header {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 .nav {
   display: inline;

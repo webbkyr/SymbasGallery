@@ -5,6 +5,7 @@ import Vuex from 'vuex';
 import App from './App';
 import router from './router';
 import symbaPhotos from './assets/symba.json';
+import homePhoto from './assets/home.json';
 
 Vue.use(Vuex);
 Vue.config.productionTip = false;
@@ -14,6 +15,7 @@ Vue.config.productionTip = false;
 const store = new Vuex.Store({
   state: {
     photos: [...symbaPhotos],
+    homePagePhoto: homePhoto,
     currentPhoto: 0,
     showAllPhotos: true,
     puppyChecked: false,

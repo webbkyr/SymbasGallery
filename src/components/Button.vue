@@ -11,6 +11,8 @@ export default {
 
 <style scoped>
 .pg__button {
+  display: block;
+  margin: 0 auto;
   width: 150px;
   height: 40px;
   margin-top: 15px;
