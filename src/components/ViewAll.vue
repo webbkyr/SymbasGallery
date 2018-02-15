@@ -2,14 +2,18 @@
   <div class="view-all">
     <pg-filters></pg-filters>
   <ul>
+  <transition-group name='onlyPuppyPhotos' tag='li'>
     <li v-show='$store.state.puppyChecked && $store.state.showAllPhotos === false' 
-        v-for='(photo, index) in puppyPhotos'>
+        v-for='(photo, index) in puppyPhotos' :key=index>
       <img class='shadowed' :src='photo.src' :alt='photo.alt'/>
     </li>
-    <li v-show='$store.state.adultChecked && $store.state.showAllPhotos == false' 
-        v-for='(photo, index) in adultPhotos'>
-      <img class='shadowed' :src='photo.src' :alt='photo.alt'/>
-    </li>
+  </transition-group>
+    <transition-group name='onlyAdultPhotos' tag='li'>
+      <li v-show='$store.state.adultChecked && $store.state.showAllPhotos == false' 
+          v-for='(photo, index) in adultPhotos' :key=index>
+        <img class='shadowed' :src='photo.src' :alt='photo.alt'/>
+      </li>
+    </transition-group>
     <transition-group name='allPhotos' tag='li'>
       <li v-show='$store.state.showAllPhotos'
             v-for='(photo, index) in showAll' :key=index>
@@ -62,25 +66,22 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-/* li {
-  display: block;
-  visibility: visible;
-  opacity: 1;
-  animation: fade 1s;
-}
-@keyframes fade {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-} */
-
 .allPhotos-enter-active, .allPhotos-leave-active {
   transition: all 1s;
 }
 .allPhotos-enter, .allPhotos-leave-to {
+  opacity: 0;
+}
+.onlyAdultPhotos-enter-active, .onlyAdultPhotos-leave-active {
+  transition: all 1s;
+}
+.onlyAdultPhotos-enter, .onlyAdultPhotos-leave-to {
+  opacity: 0;
+}
+.onlyPuppyPhotos-enter-active, .onlyPuppyPhotos-leave-active {
+  transition: all 1s;
+}
+.onlyPuppyPhotos-enter, .onlyPuppyPhotos-leave-to {
   opacity: 0;
 }
 h1, h2 {
