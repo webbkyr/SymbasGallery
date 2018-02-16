@@ -14,11 +14,11 @@
           <img class='shadowed' :src='photo.src' :alt='photo.alt'/>
         </li>
     </transition-group> -->
-    <transition-group name='activePhotos' tag='li'>
+   <transition-group name='showActivePhotos' tag='li'>
         <li v-for='(photo, index) in activePhotos' :key=index>
           <img class='shadowed' :src='photo.src' :alt='photo.alt'/>
         </li>
-    </transition-group>
+  </transition-group>
   </ul>
     <div class='button-container'>
       <pg-button :clicked='beginSlideshow' text='Slideshow'></pg-button>
@@ -32,24 +32,19 @@ import FilterOptions from '@/components/FilterOptions';
 
 export default {
   name: 'ViewAll',
+  data() {
+    return {
+      showPhotos: true,
+    };
+  },
   components: {
     'pg-button': Button,
     'pg-filters': FilterOptions,
   },
   computed: {
-    // showAll() {
-    //   return this.$store.getters.photos;
-    // },
-    // puppyPhotos() {
-    //   return this.$store.getters.puppyPhotos;
-    // },
-    // adultPhotos() {
-    //   return this.$store.getters.adultPhotos;
-    // },
     activePhotos() {
-      //all the photos but with filter applied to it
       return this.$store.getters.activePhotos;
-    }
+    },
   },
   methods: {
     beginSlideshow() {
@@ -61,21 +56,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.allPhotos-enter-active,
-.allPhotos-leave-active,
-.onlyAdultPhotos-enter-active,
-.onlyAdultPhotos-leave-active,
-.onlyPuppyPhotos-enter-active,
-.onlyPuppyPhotos-leave-active
- {
-  transition: all 1s;
+.showActivePhotos-enter-active {
+  transition: all .5s ease;
 }
-.allPhotos-enter,
-.allPhotos-leave-to,
-.onlyAdultPhotos-enter,
-.onlyAdultPhotos-leave-to,
-.onlyPuppyPhotos-enter,
-.onlyPuppyPhotos-leave-to {
+.showActivePhotos-enter {
   opacity: 0;
 }
 h1, h2 {

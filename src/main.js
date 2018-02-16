@@ -18,19 +18,14 @@ const store = new Vuex.Store({
     homePagePhoto: homePhoto,
     currentPhoto: 0,
     activeFilter: 'all',
-    showAllPhotos: true,
-    puppyChecked: false,
-    adultChecked: false,
   },
   getters: {
     photos: state => state.photos.map(photo => ({ src: photo.src, alt: photo.alt })),
     selectedPhoto: state => state.photos.find((photo, index) => index === state.currentPhoto),
-    puppyPhotos: state => state.photos.filter(photo => photo.category === 'puppy'),
-    adultPhotos: state => state.photos.filter(photo => photo.category === 'adult'),
-    activePhotos: state => {
+    activePhotos: (state) => {
       const filter = state.activeFilter;
-      return filter === 'all' ? state.photos : state.photos.filter(photo => photo.category === filter)
-    }
+      return filter === 'all' ? state.photos : state.photos.filter(photo => photo.category === filter);
+    },
   },
   mutations: {
     nextPhoto(state) {
@@ -49,20 +44,6 @@ const store = new Vuex.Store({
     },
     setActiveFilter(state, string) {
       state.activeFilter = string;
-    },
-    toggleShowAll(state) {
-      state.showAllPhotos = !state.showAllPhotos;
-    },
-    togglePuppy(state, boolean) {
-        state.puppyChecked = boolean;
-      // state.puppyChecked = boolean ? true : false;
-    },
-    toggleAdult(state, boolean) {
-      if (boolean === true) {
-        state.adultChecked = true;
-      } else {
-        state.adultChecked = false;
-      }
     },
   },
 });

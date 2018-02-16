@@ -19,8 +19,8 @@ export default {
     bio: 'Symba was born August 25, 2015. We got her when she was just 10 weeks old. As a puppy, she was fiesty and hyper but now, at almost 3 years old, she is a loveable lion. She likes fetch and she likes to chase squirrels and groundhogs. She loves hugs, kisses and to use you as a pillow (and often does not realize how large she is at 110 lbs.)',
     theProject: 'This application was built using the VueJS framework, vue-router, vuex for state management, HTML5 and CSS3.',
     links: [
-      {name: 'Github', url: 'https://github.com/webbkyr/SymbasGallery'}
-    ]
+      { name: 'Github', url: 'https://github.com/webbkyr/SymbasGallery' },
+    ],
   }),
 };
 </script>
