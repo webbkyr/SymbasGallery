@@ -62,8 +62,8 @@ h1, h2 {
 img {
   position: relative;
   float: left;
-  width: 300px;
-  height: 300px;
+  width: 330px;
+  height: 350px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -74,14 +74,12 @@ img:hover {
   transition-duration: 0.4s;
   border: 2px solid #42b983;
 }
-
-.grow { 
-  transition: all .2s ease-in-out; 
+.grow {
+  transition: all .2s ease-in-out;
 }
-
-.grow:hover { transform: scale(1.1); }
-
-
+.grow:hover {
+  transform: scale(1.1);
+}
 .shadowed {
     -webkit-box-shadow: 0 10px 6px -6px #777;
        -moz-box-shadow: 0 10px 6px -6px #777;

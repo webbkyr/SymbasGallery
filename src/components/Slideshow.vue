@@ -1,8 +1,11 @@
 <template>
   <div class='slideshow'>
-    <img class='shadowed' :src='currentPhoto.src' :alt='currentPhoto.alt' />
-    <pg-button :clicked='prevPhoto' text='Prev Photo'></pg-button>
-    <pg-button :clicked='nextPhoto' text='Next Photo'></pg-button>
+    <transition name='slide'>
+    <img class='shadowed' :src='currentPhoto.src' :alt='currentPhoto.alt' :key='currentPhoto.id' />
+    </transition>
+    <div></div>
+    <pg-button class='sldshw__b' :clicked='prevPhoto' text='Prev Photo'></pg-button>
+    <pg-button class='sldshw__b' :clicked='nextPhoto' text='Next Photo'></pg-button>
   </div>
 </template>
 
@@ -35,8 +38,10 @@ export default {
 
 <style scoped>
 img {
-  width: 300px;
-  height: 300px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 450px;
+  height: 500px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -46,5 +51,20 @@ img {
     -webkit-box-shadow: 0 10px 6px -6px #777;
        -moz-box-shadow: 0 10px 6px -6px #777;
             box-shadow: 0 10px 6px -6px #777;
+}
+.sldshw__b {
+  margin: 10px;
+  padding: 10px;
+  display: inline-block;
+}
+.slide-enter-active {
+  transition: all .8s linear;
+}
+.slide-leave-action {
+  transition: all .2 ease-out;
+}
+.slide-enter, .slide-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
 }
 </style>

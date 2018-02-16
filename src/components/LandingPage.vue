@@ -29,6 +29,7 @@ export default {
 <style scoped>
 
 .home-photo {
+  margin-top: 30px;
   text-align: center;
   height: 450px;
   border-radius: 20px;

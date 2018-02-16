@@ -1,6 +1,6 @@
 <template>
   <div class='main-header'>
-    <h1>{{ text }}</h1>
+    <h1 class='title-text'>{{ text }}</h1>
     <p class='nav'> <router-link to='/'>{{ viewHome }}</router-link></p> |
     <p class='nav' > <router-link to='about'> {{ viewAbout }}</router-link></p>
   </div>
@@ -26,8 +26,9 @@ h1, h2 {
   margin: 0 auto;
 
 }
-h1 {
+.title-text {
   font-size: 42px;
+  margin-bottom: 25px;
 }
 ul {
   list-style-type: none;
