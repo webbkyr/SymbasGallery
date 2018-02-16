@@ -4,7 +4,7 @@
      <ul>
       <transition-group name='fade' tag='li'>
         <li  v-for='photo in activePhotos' :key='photo.id'>
-          <img class='shadowed' :src='photo.src' :alt='photo.alt' :title='photo.alt'/>
+          <img class='shadowed grow' :src='photo.src' :alt='photo.alt' :title='photo.alt'/>
         </li>
       </transition-group>
     </ul>
@@ -48,7 +48,7 @@ export default {
   transition: all 1.5s ease;
 }
 .fade-leave-active {
-  transition: all 1.5s ease-out;
+  transition: all .1s ease-out;
 }
 
 .fade-enter, .fade-leave-to {
@@ -68,8 +68,20 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 20px;
-  margin: 10px;
+  margin: 20px;
 }
+img:hover {
+  transition-duration: 0.4s;
+  border: 2px solid #42b983;
+}
+
+.grow { 
+  transition: all .2s ease-in-out; 
+}
+
+.grow:hover { transform: scale(1.1); }
+
+
 .shadowed {
     -webkit-box-shadow: 0 10px 6px -6px #777;
        -moz-box-shadow: 0 10px 6px -6px #777;
