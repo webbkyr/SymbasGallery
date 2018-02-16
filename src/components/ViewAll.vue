@@ -20,11 +20,6 @@ import FilterOptions from '@/components/FilterOptions';
 
 export default {
   name: 'ViewAll',
-  data() {
-    return {
-      showPhotos: true,
-    };
-  },
   components: {
     'pg-button': Button,
     'pg-filters': FilterOptions,

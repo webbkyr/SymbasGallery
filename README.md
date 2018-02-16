@@ -2,6 +2,8 @@
 
 > A Vue.js project; front-end only photogallery of Symba that is made up puppy and adult photos; filter photos based on those categories.
 
+> Live Demo[https://symbasgallery.netlify.com/#/]
+
 ## Build Setup
 
 ``` bash
