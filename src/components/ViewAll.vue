@@ -16,7 +16,7 @@
     </transition-group> -->
    <transition-group name='showActivePhotos' tag='li'>
         <li v-for='(photo, index) in activePhotos' :key=index>
-          <img class='shadowed' :src='photo.src' :alt='photo.alt'/>
+          <img class='shadowed' :src='photo.src' :alt='photo.alt' :title='photo.alt'/>
         </li>
   </transition-group>
   </ul>

@@ -40,13 +40,13 @@ body {
   height: 60px;
 }
 .slide-fade-enter-active {
-  transition: all .8s ease;
+  transition: all 1s ease;
 }
 .slide-fade-leave-active {
-  transition: all .0s ease-out;
+  transition: all .1 ease-out;
 }
 .slide-fade-enter, .slide-fade-leave-to {
-  transform: translateX(10px);
+  transform: translateY(10px);
   opacity: 0;
 }
 </style>
