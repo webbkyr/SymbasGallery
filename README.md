@@ -1,6 +1,6 @@
-# puppy-gallery
+# Symba's Photogallery
 
-> A Vue.js project
+> A Vue.js project; front-end only photogallery of Symba that is made up puppy and adult photos; filter photos based on those categories.
 
 ## Build Setup
 

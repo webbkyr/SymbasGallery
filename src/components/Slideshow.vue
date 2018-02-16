@@ -58,9 +58,9 @@ img {
   display: inline-block;
 }
 .slide-enter-active {
-  transition: all .8s linear;
+  transition: all 1s ease-in;
 }
-.slide-leave-action {
+.slide-leave-active {
   transition: all .2 ease-out;
 }
 .slide-enter, .slide-leave-to {
