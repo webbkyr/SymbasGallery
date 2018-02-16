@@ -45,14 +45,14 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .fade-enter-active {
-  transition: all 1.5s ease;
+  transition: all 1s ease;
 }
 .fade-leave-active {
   transition: all .1s ease-out;
 }
 
 .fade-enter, .fade-leave-to {
-  transform: translateY(10px);
+  transform: translateY(20px);
   opacity: 0;
 }
 h1, h2 {
