@@ -1,25 +1,13 @@
 <template>
   <div class="view-all">
     <pg-filters></pg-filters>
-  <ul>
-    <!-- <transition-group name='onlyPuppyPhotos' tag='li'>
-      <li v-show='$store.state.puppyChecked && $store.state.showAllPhotos === false'
-          v-for='(photo, index) in puppyPhotos' :key=index>
-        <img class='shadowed' :src='photo.src' :alt='photo.alt'/>
-      </li>
-    </transition-group>
-    <transition-group name='onlyAdultPhotos' tag='li'>
-        <li v-show='$store.state.adultChecked && $store.state.showAllPhotos == false'
-            v-for='(photo, index) in adultPhotos' :key=index>
-          <img class='shadowed' :src='photo.src' :alt='photo.alt'/>
-        </li>
-    </transition-group> -->
-   <transition-group name='showActivePhotos' tag='li'>
-        <li v-for='(photo, index) in activePhotos' :key=index>
+     <ul>
+      <transition-group name='fade' tag='li'>
+        <li  v-for='photo in activePhotos' :key='photo.id'>
           <img class='shadowed' :src='photo.src' :alt='photo.alt' :title='photo.alt'/>
         </li>
-  </transition-group>
-  </ul>
+      </transition-group>
+    </ul>
     <div class='button-container'>
       <pg-button :clicked='beginSlideshow' text='Slideshow'></pg-button>
     </div>
@@ -56,10 +44,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.showActivePhotos-enter-active {
-  transition: all .5s ease;
+.fade-enter-active {
+  transition: all 1.5s ease;
 }
-.showActivePhotos-enter {
+.fade-leave-active {
+  transition: all 1.5s ease-out;
+}
+
+.fade-enter, .fade-leave-to {
+  transform: translateY(10px);
   opacity: 0;
 }
 h1, h2 {
