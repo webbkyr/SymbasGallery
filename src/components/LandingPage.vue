@@ -1,6 +1,5 @@
 <template>
   <div id='home-view'>
-    <!-- <h2>Welcome to </h2> -->
     <img class='home-photo' :src='homePhoto.src' :alt='homePhoto.alt' />
     <pg-button :clicked='enterSite' text='Enter'></pg-button>
   </div>

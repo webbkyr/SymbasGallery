@@ -35,8 +35,6 @@ export default {
 
 <style scoped>
 img {
-  /* position: relative;
-  float: left; */
   width: 300px;
   height: 300px;
   background-position: 50% 50%;

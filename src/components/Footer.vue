@@ -9,7 +9,7 @@ export default {
   name: 'Pg-Footer',
   data() {
     return {
-      text: '© Kayla R. Webb | Built with VueJS',
+      text: '2018 © Kayla R. Webb | Built with VueJS',
     };
   },
 };
