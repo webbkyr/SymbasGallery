@@ -28,6 +28,14 @@ export default {
 
 <style scoped>
 
+@media (max-width: 700px ) {
+  .home-view {
+    width: 650px;
+  }
+  .home-photo {
+    width: 95%;
+  }
+}
 .home-photo {
   margin-top: 30px;
   text-align: center;
