@@ -39,6 +39,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+@media (max-width: 700px) {
+  .view-all {
+    width: 350px;
+  }
+  ul, li, img {
+    width: 350px;
+  }
+}
 .fade-enter-active {
   transition: all 1s ease;
 }
@@ -63,7 +72,7 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 20px;
-  margin: 20px;
+  margin: 10px;
 }
 img:hover {
   transition-duration: 0.4s;
@@ -86,7 +95,7 @@ ul {
 }
 li {
   display: inline-block;
-  margin: 0 10px;
+  /* margin: 0 10px; */
 }
 a {
   color: #42b983;
