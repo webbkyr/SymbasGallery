@@ -1,6 +1,5 @@
 <template>
   <div class='about'>
-    <!-- <h1>What's this app?</h1> -->
     <h1>About Symba</h1>
     <p>{{ bio }}</p>
     <h1>The Code</h1>
@@ -39,14 +38,14 @@ export default {
 
 <style scoped>
 
-@media (max-width: 700px ) {
+@media (max-width: 750px ) {
   .about {
     width: 300px;
   }
   
 }
 .about {
-  width: 500px;
+  max-width: 650px;
   margin: 0 auto;
   padding: 15px;
 }
