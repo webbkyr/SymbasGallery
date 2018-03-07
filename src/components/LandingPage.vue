@@ -33,7 +33,8 @@ export default {
     width: 650px;
   }
   .home-photo {
-    width: 95%;
+    width: 300px;
+    margin: 0 auto;
   }
 }
 .home-photo {
