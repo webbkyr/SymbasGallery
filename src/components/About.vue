@@ -38,6 +38,13 @@ export default {
 </script>
 
 <style scoped>
+
+@media (max-width: 700px ) {
+  .about {
+    width: 300px;
+  }
+  
+}
 .about {
   width: 500px;
   margin: 0 auto;
