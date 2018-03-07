@@ -46,8 +46,14 @@ export default {
   }
   ul, li, img {
     width: 350px;
+    margin: 0 auto;
   }
 }
+
+.view-all {
+  margin: 0 auto;
+}
+
 .fade-enter-active {
   transition: all 1s ease;
 }
@@ -72,6 +78,7 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 20px;
+  margin: 0 auto;
   margin: 10px;
 }
 img:hover {
@@ -95,7 +102,7 @@ ul {
 }
 li {
   display: inline-block;
-  /* margin: 0 10px; */
+  margin: 0 auto;
 }
 a {
   color: #42b983;
