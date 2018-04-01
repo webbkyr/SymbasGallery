@@ -9,11 +9,6 @@ function getRenderedText(Component, propsData) {
 
 describe('LandingPage.vue', () => {
   it('renders to the DOM', () => {
-    // console.log(Object.keys(LandingPage))
-    // expect(getRenderedText(LandingPage, {
-    //   testPhoto: 'www.jpg.com'
-    // })).toBeTruthy()
     expect(typeof LandingPage.render).toBe('function')
-    // expect(vm.$el).toBeTruthy()
   })
 })
