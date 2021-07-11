@@ -1,4 +1,5 @@
 # Symba's Photogallery
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ee252023-e962-470f-932f-c9bf2afece87/deploy-status)](https://app.netlify.com/sites/symbasgallery/deploys)
 
 > A Vue.js project; front-end only photogallery of Symba that is made up puppy and adult photos; filter photos based on those categories.
 
