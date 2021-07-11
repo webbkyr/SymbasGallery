@@ -42,7 +42,6 @@ export default {
   .about {
     width: 300px;
   }
-  
 }
 .about {
   max-width: 650px;

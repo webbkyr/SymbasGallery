@@ -1,6 +1,10 @@
 <template>
   <div id='home-view'>
-    <img class='home-photo' :src='homePhoto.src' :alt='homePhoto.alt' />
+    <img
+      class='home-photo'
+      src="@/assets/IMG_5649_puppy_leaves.jpeg"
+      alt="Symba at 10 weeks, sitting in the leaves"
+    />
     <pg-button :clicked='enterSite' text='Enter'></pg-button>
   </div>
 </template>
@@ -12,11 +16,6 @@ export default {
   name: 'LandingPage',
   components: {
     'pg-button': Button,
-  },
-  computed: {
-    homePhoto() {
-      return this.$store.state.homePagePhoto;
-    },
   },
   methods: {
     enterSite() {
